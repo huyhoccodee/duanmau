@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biểu đồ</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="boxcenter">
+      <header>
+      <div class="row mb headerAdmin">
+        <img class="logo" src="image/2 1 (1).png" alt="" />
+        <h1>Admin</h1>
+      </div>
+      <div class="row mb menu">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="./index.html">Trang chủ</a></li>
+              <li><a href="./admin.html">Danh mục</a></li>
+              <li><a href="./admin.html">Hàng hóa</a></li>
+              <li><a href="#">Khách hàng</a></li>
+              <li><a href="#">Bình luận</a></li>
+              <li><a href="#">Thống kê</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      </header>
+      <div class="row">
+        <div class="row frmtitle"><h1>Biểu đồ</h1></div>
+        <div class="row2 frmcontent">
+            <div id="myChart" style="width:100%; width:900px; height:600px; align-items: center"></div>
+            <script>
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+// Set Data
+          const data = google.visualization.arrayToDataTable([
+            ['Contry', 'Mhl'],
+            ['Hàn Quốc',30.0],
+            ['Thái Lan',13.0],
+            ['Hoa Kỳ',10.0],
+            ['Nhật bản',17.0],
+            ['Châu Âu',23.0],
+            ['Khác',7.0]
+          ]);
+
+// Set Options
+          const options = {
+            title:'Thị trường mỹ phẩm Việt Nam',
+            is3D:true
+          };
+
+// Draw
+          const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+          chart.draw(data, options);
+
+        }
+            </script>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
